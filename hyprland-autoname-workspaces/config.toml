@@ -1,0 +1,30 @@
+
+[icons]
+# Add your icons mapping
+# use double quote the key and the value
+# take class name from 'hyprctl clients'
+"DEFAULT" = "${class}${title}"
+"(?i)Kitty" = ""
+"[Ff]irefox" = ""
+"(?i)Code" = ""
+"(?i)Spotify" = ""
+"(?i)Nautilus" = ""
+"(?i)NewsFlash" = ""
+"(?i)gnome.Software" = ""
+"(?i)textpieces" = ""
+"(?i)Parsec" = ""
+"(?i)virt-manager" = ""
+
+[title."(?i)kitty"]
+"(?i)neomutt" = "neomutt"
+
+# Add your applications that need to be exclude
+# The key is the class, the value is the title.
+# You can put an empty title to exclude based on
+# class name only, "" make the job.
+[exclude]
+"(?i)fcitx" = ".*" # will match all title for fcitx
+"(?i)TestApp" = "" # will match all title for TestApp
+aProgram = "^$" # will match null title for aProgram
+"[Ss]team" = "Friends List.*"
+"[Ss]team" = "^$" # will match all Steam window with null title (some popup)
