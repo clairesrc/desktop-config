@@ -14,5 +14,7 @@ PROGRESS=$(echo "scale=2;$POS / ($LENGTH  / 1000000)" | bc -l)
 PLAYED_NUM_CHARS=$(echo "$COL_WIDTH * $PROGRESS" | bc)
 UNPLAYED_NUM_CHARS=$(echo "$COL_WIDTH - $PLAYED_NUM_CHARS" | bc)
 
-for i in $(seq 1 $PLAYED_NUM_CHARS); do echo -n "$PLAYED_CHAR"; done
-for i in $(seq 1 $UNPLAYED_NUM_CHARS); do echo -n "$UNPLAYED_CHAR"; done
+if [ $(playerctl status) ]; then
+    for i in $(seq 1 $PLAYED_NUM_CHARS); do echo -n "$PLAYED_CHAR"; done
+    for i in $(seq 1 $UNPLAYED_NUM_CHARS); do echo -n "$UNPLAYED_CHAR"; done
+fi
