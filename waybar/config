@@ -15,6 +15,7 @@
     "clock"
   ],
   "modules-right": [
+    "custom/mpris-progress"
     "custom/waybar-mpris",
     "custom/weather",
     "tray",
@@ -37,12 +38,12 @@
 },
   "custom/waybar-mpris": {
     "return-type": "json",
-    "exec": "waybar-mpris --position --autofocus",
+    "exec": "waybar-mpris --position --autofocus  --order \"SYMBOL:ARTIST:TITLE\"",
     "on-click": "waybar-mpris --send toggle",
     "escape": true
   },
   "wireplumber": {
-    "format": "  {volume}% {icon}  ",
+    "format": " {volume}% {icon}  ",
     "format-muted": "",
     "on-click": "helvum",
     "format-icons": ["", "", ""]
@@ -79,7 +80,11 @@
     "on-click": "activate",
     "format": "{name}"
   },
-       
+    
+  "custom/mpris-progress": {
+    "exec": "~/.local/bin/mpris-progress",
+    "restart-interval": 1
+  }   
 
   "clock": {
     "format": "{:%A, %B %d, %Y | %I:%M %p}",
